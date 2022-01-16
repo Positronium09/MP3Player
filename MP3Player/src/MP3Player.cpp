@@ -7,7 +7,7 @@
 #pragma comment (lib, "winmm.lib")
 
 
-inline int GetNumberLengthInChars(ULONGLONG num) { return snprintf(NULL, 0, "%I64u", num); }
+inline int GetNumberLengthInChars(const ULONGLONG num) { return snprintf(NULL, 0, "%I64u", num); }
 
 int ConvertStrToInt(const TCHAR* text, int radix = 10)
 {
@@ -258,7 +258,7 @@ MP3Player::string MP3Player::GetFileName()
 }
 
 
-MCIERROR MP3Player::SetPos(int milliseconds, bool resume)
+MCIERROR MP3Player::SetPos(const int milliseconds, const bool resume)
 {
 	MCIERROR error = 0;
 
@@ -280,7 +280,7 @@ MCIERROR MP3Player::SetPos(int milliseconds, bool resume)
 	return error;
 }
 
-MCIERROR MP3Player::SetVolume(int volume)
+MCIERROR MP3Player::SetVolume(const int volume)
 {
 	MCIERROR error = 0;
 
@@ -297,7 +297,7 @@ MCIERROR MP3Player::SetVolume(int volume)
 	return error;
 }
 
-MCIERROR MP3Player::Repeat(bool enable)
+MCIERROR MP3Player::Repeat(const bool enable)
 {
 	isRepeating = enable;
 	if (IsPlaying())

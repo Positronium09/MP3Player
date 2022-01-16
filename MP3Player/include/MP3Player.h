@@ -38,10 +38,10 @@ class MP3Player
 	string GetAlias();
 	string GetFileName();
 
-	MCIERROR SetPos(int milliseconds, bool resume = false);
-	MCIERROR SetVolume(int volume);
+	MCIERROR SetPos(const int milliseconds, const bool resume = false);
+	MCIERROR SetVolume(const int volume);
 
-	MCIERROR Repeat(bool enable);
+	MCIERROR Repeat(const bool enable);
 
 	inline bool IsRepeating() { return isRepeating; };
 	inline bool IsOpen() { return isOpen; }
