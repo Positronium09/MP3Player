@@ -247,12 +247,12 @@ int MP3Player::GetVolume()
 	return volume;
 }
 
-MP3Player::string MP3Player::GetAlias()
+const MP3Player::string& MP3Player::GetAlias()
 {
 	return alias;
 }
 
-MP3Player::string MP3Player::GetFileName()
+const MP3Player::string& MP3Player::GetFileName()
 {
 	return filename;
 }

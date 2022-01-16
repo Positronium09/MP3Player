@@ -35,8 +35,8 @@ class MP3Player
 	int GetLength();
 	int GetVolume();
 
-	string GetAlias();
-	string GetFileName();
+	const string& GetAlias();
+	const string& GetFileName();
 
 	MCIERROR SetPos(const int milliseconds, const bool resume = false);
 	MCIERROR SetVolume(const int volume);
