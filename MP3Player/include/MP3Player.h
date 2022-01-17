@@ -5,6 +5,7 @@
 
 class MP3Player
 {
+	public:
 #ifdef UNICODE
 	using string = std::wstring;
 #else
@@ -15,11 +16,14 @@ class MP3Player
 	bool isOpen = false;
 	bool isPlaying = false;
 	bool isRepeating = false;
+	TCHAR* returnText = nullptr;
 	string filename;
 	string alias;
 
 	public:
 	MP3Player();
+	MP3Player(const MP3Player&) = default;
+
 	MP3Player(const string& filename);
 	~MP3Player();
 

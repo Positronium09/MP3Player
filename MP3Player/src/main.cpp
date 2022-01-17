@@ -5,15 +5,15 @@
 
 int main()
 {
+	bool file = 0;
 	MP3Player mp3(TEXT("<file path>"));
-
+	
 	mp3.Play();
 	mp3.Repeat(true);
 	int volume = mp3.GetVolume();
 	int length = mp3.GetLength();
 
 	mp3.SetVolume(500);
-	mp3.SetPos(1000, true);
 
 	while (true)
 	{
@@ -30,7 +30,7 @@ int main()
 
 		std::cout << hours << " Hours : " << minutes << " Minutes : " << seconds << " Seconds : " << milliseconds << " Milliseconds" << std::endl;
 
-		if (GetAsyncKeyState(0x52) & 1)
+		if (GetAsyncKeyState('R') & 1)
 		{
 			mp3.Repeat(!mp3.IsRepeating());
 		}
@@ -46,7 +46,7 @@ int main()
 				mp3.Resume();
 			}
 		}
-
+		
 		if ((!mp3.IsPlaying() && !mp3.IsRepeating()) || GetAsyncKeyState(VK_ESCAPE) & 1)
 		{
 			break;
