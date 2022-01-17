@@ -5,7 +5,6 @@
 
 int main()
 {
-	bool file = 0;
 	MP3Player mp3(TEXT("<file path>"));
 	
 	mp3.Play();
